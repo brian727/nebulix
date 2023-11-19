@@ -1,13 +1,13 @@
 ---
 /* STATIC CMS ADMIN PAGE */
-import { menu, page, settings, post, project, product } from "@cms/index.mjs";
+import { page, settings, post, project } from "@cms/index.mjs";
 import logo from "@icons/logo.svg";
 import newsIcon from "@icons/news.svg";
 import pageIcon from "@icons/page.svg";
-import menuIcon from "@icons/menu.svg";
+
 import settingsIcon from "@icons/settings.svg";
 import portfolioIcon from "@icons/portfolio.svg";
-import shopIcon from "@icons/shop.svg";
+
 
 const lang = import.meta.env.WEBSITE_LANGUAGE;
 const url = Astro.site;
@@ -27,7 +27,7 @@ const config = {
     max_file_size: 2012000,
     folder_support: true,
   },
-  collections: [page, post, project, product, menu, settings],
+  collections: [page, post, project, settings],
 };
 ---
 
@@ -100,10 +100,10 @@ const config = {
         logo,
         newsIcon,
         pageIcon,
-        menuIcon,
+       
         settingsIcon,
         portfolioIcon,
-        shopIcon,
+     
       }}
     >
     window.CMS.init({ config });
@@ -186,10 +186,10 @@ const config = {
     CMS.registerIcon("house", () => h("img", { src: logo.src }));
     CMS.registerIcon("news", () => h("img", { src: newsIcon.src }));
     CMS.registerIcon("page", () => h("img", { src: pageIcon.src }));
-    CMS.registerIcon("menu", () => h("img", { src: menuIcon.src }));
+   
     CMS.registerIcon("settings", () => h("img", { src: settingsIcon.src }));
     CMS.registerIcon("portfolio", () => h("img", { src: portfolioIcon.src }));
-    CMS.registerIcon("shop", () => h("img", { src: shopIcon.src }));
+  
     </script>
   </body>
 </html>
